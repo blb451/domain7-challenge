@@ -1,0 +1,6 @@
+// Modules
+import styled from 'styled-components';
+
+export const Container = styled.button`
+  cursor: pointer;
+`;

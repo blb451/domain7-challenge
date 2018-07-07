@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "strict": 0,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-confusing-arrow": ["off"],
+    "import/prefer-default-export": ["off"],
+    "react/jsx-filename-extension": ["off"]
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": { "root": ["./src"] }
+    }
+  }
+}

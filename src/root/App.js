@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { hot } from 'react-hot-loader';
 
 // Components
-import HomeView from 'pages/home/HomeView';
+import News from 'pages/news/News';
 
 // Styles
 import './globalStyles';
@@ -21,8 +21,8 @@ const theme = {
 const App = () => (
   <ThemeProvider theme={theme}>
     <Switch>
-      <Route exact path="/" component={HomeView} />
-      <Route exact path="/home" component={HomeView} />
+      <Route exact path="/" component={News} />
+      <Route exact path="/new" component={News} />
     </Switch>
   </ThemeProvider>
 );

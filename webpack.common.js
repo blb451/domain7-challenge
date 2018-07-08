@@ -1,10 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   resolve: { extensions: ['.js', '.jsx'] },
   context: process.cwd(),
   node: {
     __filename: true,
+    fs: 'empty',
   },
   output: {
     filename: '[name].js',
@@ -14,6 +16,7 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
+    new Dotenv(),
   ],
   module: {
     rules: [

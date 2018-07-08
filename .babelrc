@@ -12,6 +12,8 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    "babel-plugin-styled-components",
+    "@babel/plugin-proposal-class-properties",
     "react-hot-loader/babel",
     [
       "module-resolver",

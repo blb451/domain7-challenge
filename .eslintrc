@@ -1,4 +1,6 @@
 {
+  "parser": "babel-eslint",
+  "plugins": ["babel"],
   "extends": "airbnb",
   "rules": {
     "strict": 0,

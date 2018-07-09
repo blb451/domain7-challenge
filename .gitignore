@@ -108,6 +108,7 @@ typings/
 ### VisualStudioCode ###
 .vscode/*
 .vs
+slnx.sqlite
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

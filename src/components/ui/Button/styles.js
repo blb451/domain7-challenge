@@ -1,5 +1,7 @@
 // Modules
 import styled from 'styled-components';
+
+// Constants
 import { colors } from 'config/style.constant';
 
 const { lightGrey, grey } = colors;

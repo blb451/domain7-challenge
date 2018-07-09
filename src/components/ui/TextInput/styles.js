@@ -1,4 +1,7 @@
+// Modules
 import styled from 'styled-components';
+
+// Constants
 import { colors } from 'config/style.constant';
 
 export const Input = styled.input`

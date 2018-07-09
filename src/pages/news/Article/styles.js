@@ -1,4 +1,7 @@
+// Modules
 import styled from 'styled-components';
+
+// Constants
 import { colors, fontSizes, breakpoints } from 'config/style.constant';
 
 export const Link = styled.a`

@@ -50,6 +50,7 @@ const Pagination = ({
     </Container>
   );
 };
+
 Pagination.propTypes = {
   currentPage: Proptypes.number.isRequired,
   totalResults: Proptypes.number.isRequired,

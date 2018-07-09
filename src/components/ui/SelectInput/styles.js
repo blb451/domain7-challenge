@@ -1,6 +1,8 @@
 // Modules
 import styled from 'styled-components';
 import Select from 'react-styled-select';
+
+// Constants
 import { breakpoints } from 'config/style.constant';
 
 export const StyledSelect = styled(Select)`

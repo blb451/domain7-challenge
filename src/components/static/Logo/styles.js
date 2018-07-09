@@ -1,5 +1,7 @@
 // Modules
 import styled from 'styled-components';
+
+// Constants
 import { colors, fontSizes, fontWeights, breakpoints } from 'config/style.constant';
 
 export const Container = styled.div`

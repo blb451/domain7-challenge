@@ -1,10 +1,14 @@
 // Modules
-import React, { Fragment } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 
 // Components
 import Button from 'components/ui/Button';
 import PageChanger from '../PageChanger';
+
+// Styles
+import { colors } from 'config/style.constant';
+import { Container } from './styles';
 
 const shouldRenderNext = (currentPage, totalResults) => currentPage * 10 < totalResults;
 
@@ -30,17 +34,20 @@ const Pagination = ({
   const previousPages = [currentPage - 3, currentPage - 2, previousPage];
 
   return (
-    <Fragment>
+    <Container>
       {shouldRenderPrevious(currentPage) && (
-        <Button onClick={() => setPage(previousPage)}>Previous Page</Button>
+        <Button onClick={() => setPage(previousPage)}>Previous</Button>
       )}
       {renderPageChangers(previousPages, setPage, pageSize, totalResults)}
-      <span style={{ color: 'red' }}>{currentPage}</span>
+      {/* TODO: Replace color */}
+      <Button onClick={() => {}} color={colors.background} disabled>
+        {currentPage}
+      </Button>
       {renderPageChangers(nextPages, setPage, pageSize, totalResults)}
       {shouldRenderNext(currentPage, totalResults) && (
-        <Button onClick={() => setPage(nextPage)}>Next Page</Button>
+        <Button onClick={() => setPage(nextPage)}>Next</Button>
       )}
-    </Fragment>
+    </Container>
   );
 };
 Pagination.propTypes = {

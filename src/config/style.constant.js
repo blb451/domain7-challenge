@@ -1,7 +1,12 @@
 export const colors = {
+  blackest: '#000000',
   black: '#101131',
   white: '#ffffff',
-  grey: '#f4f5f7',
+  offWhite: '#eef2f3',
+  lightGrey: '#F0F0F0',
+  grey: '#d6d6d6',
+  darkerGrey: '#7d8284',
+  background: '#8e9eab',
 };
 
 export const lineHeight = {
@@ -19,10 +24,11 @@ export const fontSizes = {
   large: 1.5,
   xLarge: 2,
   xxLarge: 3.5,
+  massive: 10,
 };
 
 export const letterSpacings = {
-  large: '1.8px', // TODO: -emify
+  large: '1.8px',
 };
 
 export const fontWeights = {

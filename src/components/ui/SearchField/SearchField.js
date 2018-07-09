@@ -1,18 +1,21 @@
 // Modules
-import React, { Fragment } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 
 // Components
 import TextInput from 'components/ui/TextInput';
 import Button from 'components/ui/Button';
 
+// Styles
+import { Container } from './styles';
+
 const SearchField = ({
   onChange, onClick, value, buttonText,
 }) => (
-  <Fragment>
+  <Container>
     <TextInput onChange={onChange} value={value} />
     <Button onClick={onClick}>{buttonText}</Button>
-  </Fragment>
+  </Container>
 );
 
 SearchField.propTypes = {

@@ -1,23 +1,35 @@
 // Modules
-import React, { Fragment } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 
 // Components
 import SearchField from 'components/ui/SearchField';
+import Logo from 'components/static/Logo';
+
+// Styles
+import { Container, Content, Text, Subtext } from './styles';
 
 const Landing = ({
   queryString, handleInputChange, fetchNewsArticles, errorMessage,
 }) => (
-  <Fragment>
-    <SearchField
-      value={queryString}
-      onChange={handleInputChange}
-      onClick={fetchNewsArticles}
-      buttonText="SEARCH"
-    />
-    {errorMessage}
-    Helpful Text
-  </Fragment>
+  <Container>
+    <Content>
+      <Logo />
+      <SearchField
+        value={queryString}
+        onChange={handleInputChange}
+        onClick={fetchNewsArticles}
+        buttonText="Search"
+      />
+      {errorMessage}
+      <Text>
+        Search through millions of articles from over 30,000 large and small news sources and blogs.
+      </Text>
+      <Subtext>
+        Input keywords or phrases to search for, then press `Enter` or click `Search`
+      </Subtext>
+    </Content>
+  </Container>
 );
 
 Landing.propTypes = {

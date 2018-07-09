@@ -1,16 +1,18 @@
 // Modules
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 // Components
 import SearchField from 'components/ui/SearchField';
 import SelectInput from 'components/ui/SelectInput';
+import Logo from 'components/static/Logo';
+import Background from 'components/static/Background';
 import Article from '../Article';
 import Pagination from '../Pagination';
 import Landing from '../Landing';
 
 // Styles
-import { ArticleWrapper } from './styles';
+import { InputWrapper, SearchFieldWrapper, ArticleWrapper } from './styles';
 
 // API
 const API_KEY = process.env.NEWS_API_KEY;
@@ -34,7 +36,10 @@ class News extends Component {
   };
 
   setPage = (newPage) => {
-    this.setState({ currentPage: newPage }, () => this.fetchNewsArticles());
+    this.setState({ currentPage: newPage }, () => {
+      this.fetchNewsArticles();
+      window.scrollTo(0, 0);
+    });
   };
 
   handleInputChange = (event) => {
@@ -42,12 +47,7 @@ class News extends Component {
     this.setState({ queryString: value });
   };
 
-  handleSelectChange = (event) => {
-    const { value } = event.target;
-    if (value) {
-      this.setState({ sortBy: value }, () => this.fetchNewsArticles());
-    }
-  };
+  handleSelectChange = value => this.setState({ sortBy: value }, () => this.fetchNewsArticles());
 
   handleFetchSuccess = ({ data: { articles, totalResults } }) =>
     this.setState({ articles, totalResults, errorMessage: '' });
@@ -65,13 +65,6 @@ class News extends Component {
       .catch(error => this.handleFetchFailure(error));
   };
 
-  buildSortOptions = () =>
-    sortByOptions.map(option => (
-      <option key={option.value} value={option.value}>
-        {option.label}
-      </option>
-    ));
-
   renderArticles = () =>
     this.state.articles.map(article => <Article key={article.url} {...article} />);
 
@@ -86,26 +79,33 @@ class News extends Component {
       pageSize,
     } = this.state;
     return !articles.length ? (
-      <Landing
-        queryString={queryString}
-        handleInputChange={this.handleInputChange}
-        fetchNewsArticles={this.fetchNewsArticles}
-        errorMessage={errorMessage}
-      />
+      <Background>
+        <Landing
+          queryString={queryString}
+          handleInputChange={this.handleInputChange}
+          fetchNewsArticles={this.fetchNewsArticles}
+          errorMessage={errorMessage}
+        />
+      </Background>
     ) : (
-      <div style={{ backgroundColor: '#F0F0F0' }}>
-        <SearchField
-          value={queryString}
-          onChange={this.handleInputChange}
-          onClick={this.fetchNewsArticles}
-          buttonText="SEARCH"
-        />
-        <SelectInput
-          label="Sort by: "
-          value={sortBy}
-          onChange={this.handleSelectChange}
-          options={this.buildSortOptions()}
-        />
+      <Background>
+        <Logo />
+        <InputWrapper>
+          <SearchFieldWrapper>
+            <SearchField
+              value={queryString}
+              onChange={this.handleInputChange}
+              onClick={this.fetchNewsArticles}
+              buttonText="🔍"
+            />
+          </SearchFieldWrapper>
+          <SelectInput
+            label="Sort by "
+            value={sortBy}
+            onChange={this.handleSelectChange}
+            options={sortByOptions}
+          />
+        </InputWrapper>
         <ArticleWrapper>{this.renderArticles()}</ArticleWrapper>
         <Pagination
           currentPage={currentPage}
@@ -113,7 +113,7 @@ class News extends Component {
           pageSize={pageSize}
           setPage={this.setPage}
         />
-      </div>
+      </Background>
     );
   }
 }

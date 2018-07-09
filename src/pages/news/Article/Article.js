@@ -22,13 +22,15 @@ const Article = ({
 }) => (
   <Link href={url} target="_blank" rel="noopener noreferrer">
     <Container>
-      <ImageWrapper>
-        <Image src={urlToImage} alt="article" />
-      </ImageWrapper>
+      {urlToImage && (
+        <ImageWrapper>
+          <Image src={urlToImage} alt="article" />
+        </ImageWrapper>
+      )}
       <ContentWrapper>
         <Title>{title}</Title>
         <Data>
-          Published by {author} {' • '}
+          {author && `Published by ${author} • `}
           {formatDate(publishedAt)}
         </Data>
         <Description>{description}</Description>

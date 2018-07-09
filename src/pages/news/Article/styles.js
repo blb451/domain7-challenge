@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { colors, fontSizes, breakPoints } from 'config/style.constant';
+import { colors, fontSizes, breakpoints } from 'config/style.constant';
 
 export const Link = styled.a`
-  width: 80%;
+  width: 100%;
 `;
 
 export const Container = styled.div`
@@ -12,12 +12,13 @@ export const Container = styled.div`
   margin: 25px 0 0 0;
   padding: 20px;
   background: ${colors.white};
+  border: 0.5px solid ${colors.lightGrey};
 
   &:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${breakpoints.small}px) {
     flex-direction: column;
   }
 `;
@@ -29,7 +30,7 @@ export const ImageWrapper = styled.div`
   width: 40%;
   min-height: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${breakpoints.small}px) {
     width: 100%;
   }
 `;
@@ -54,9 +55,11 @@ export const Title = styled.p`
 export const Data = styled.p`
   font-size: ${fontSizes.xSmall}em;
   color: hsl(0, 0%, 53.3%);
+  word-wrap: break-word;
 `;
 
 export const Description = styled.p`
   font-size: ${fontSizes.small}em;
   color: hsl(0, 0%, 53.3%);
+  word-wrap: break-word;
 `;

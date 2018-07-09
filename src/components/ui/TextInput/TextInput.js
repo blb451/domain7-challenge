@@ -2,7 +2,10 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 
-const TextInput = ({ value, onChange }) => <input value={value} onChange={onChange} />;
+// Styles
+import { Input } from './styles';
+
+const TextInput = props => <Input {...props} />;
 
 TextInput.propTypes = {
   onChange: Proptypes.func.isRequired,

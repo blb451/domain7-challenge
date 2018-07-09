@@ -34,3 +34,8 @@ export const Subtext = styled.p`
   font-size: ${fontSizes.small}em;
   color: ${colors.darkerGrey};
 `;
+
+export const ErrorMessage = styled.p`
+  color: ${colors.error};
+  text-align: center;
+`;

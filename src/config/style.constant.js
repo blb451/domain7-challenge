@@ -7,6 +7,7 @@ export const colors = {
   grey: '#d6d6d6',
   darkerGrey: '#7d8284',
   background: '#8e9eab',
+  error: 'tomato',
 };
 
 export const lineHeight = {

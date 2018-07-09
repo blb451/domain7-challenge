@@ -14,8 +14,10 @@ const SelectInput = ({ label, ...rest }) => (
 
 SelectInput.propTypes = {
   onChange: Proptypes.func.isRequired,
-  // booooooooo
-  options: Proptypes.arrayOf(Proptypes.object).isRequired,
+  options: Proptypes.arrayOf(Proptypes.shape({
+    label: Proptypes.string.isRequired,
+    value: Proptypes.string.isRequired,
+  })).isRequired,
   value: Proptypes.string.isRequired,
   label: Proptypes.string.isRequired,
 };

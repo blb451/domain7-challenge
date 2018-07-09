@@ -24,7 +24,7 @@ const Article = ({
     <Container>
       {urlToImage && (
         <ImageWrapper>
-          <Image src={urlToImage} alt="article" />
+          <Image src={urlToImage} alt="not found" />
         </ImageWrapper>
       )}
       <ContentWrapper>

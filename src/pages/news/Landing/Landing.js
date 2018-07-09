@@ -7,10 +7,14 @@ import SearchField from 'components/ui/SearchField';
 import Logo from 'components/static/Logo';
 
 // Styles
-import { Container, Content, Text, Subtext } from './styles';
+import { Container, Content, Text, Subtext, ErrorMessage } from './styles';
 
 const Landing = ({
-  queryString, handleInputChange, fetchNewsArticles, errorMessage,
+  queryString,
+  handleInputChange,
+  fetchNewsArticles,
+  errorMessage,
+  handleKeyPress,
 }) => (
   <Container>
     <Content>
@@ -20,8 +24,9 @@ const Landing = ({
         onChange={handleInputChange}
         onClick={fetchNewsArticles}
         buttonText="Search"
+        onKeyPress={handleKeyPress}
       />
-      {errorMessage}
+      <ErrorMessage>{errorMessage}</ErrorMessage>
       <Text>
         Search through millions of articles from over 30,000 large and small news sources and blogs.
       </Text>
@@ -37,6 +42,7 @@ Landing.propTypes = {
   errorMessage: Proptypes.string.isRequired,
   handleInputChange: Proptypes.func.isRequired,
   fetchNewsArticles: Proptypes.func.isRequired,
+  handleKeyPress: Proptypes.func.isRequired,
 };
 
 export default Landing;

@@ -47,7 +47,18 @@ class News extends Component {
     this.setState({ queryString: value });
   };
 
+  clearSearch = () =>
+    this.setState({
+      queryString: '',
+      articles: [],
+      currentPage: 1,
+      totalResults: 0,
+      errorMessage: '',
+    });
+
   handleSelectChange = value => this.setState({ sortBy: value }, () => this.fetchNewsArticles());
+
+  handleKeyPress = ({ key }) => key === 'Enter' && this.fetchNewsArticles();
 
   handleFetchSuccess = ({ data: { articles, totalResults } }) =>
     this.setState({ articles, totalResults, errorMessage: '' });
@@ -59,10 +70,12 @@ class News extends Component {
       queryString, currentPage, pageSize, sortBy,
     } = this.state;
 
-    axios
-      .get(`${API_URL}?q=${queryString}&page=${currentPage}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${API_KEY}`)
-      .then(results => this.handleFetchSuccess(results))
-      .catch(error => this.handleFetchFailure(error));
+    if (queryString) {
+      axios
+        .get(`${API_URL}?q=${queryString}&page=${currentPage}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${API_KEY}`)
+        .then(results => this.handleFetchSuccess(results))
+        .catch(error => this.handleFetchFailure(error));
+    }
   };
 
   renderArticles = () =>
@@ -78,24 +91,27 @@ class News extends Component {
       errorMessage,
       pageSize,
     } = this.state;
-    return !articles.length ? (
+
+    return !articles.length || errorMessage ? (
       <Background>
         <Landing
           queryString={queryString}
           handleInputChange={this.handleInputChange}
           fetchNewsArticles={this.fetchNewsArticles}
           errorMessage={errorMessage}
+          handleKeyPress={this.handleKeyPress}
         />
       </Background>
     ) : (
       <Background>
-        <Logo />
+        <Logo onClick={this.clearSearch} interactive />
         <InputWrapper>
           <SearchFieldWrapper>
             <SearchField
               value={queryString}
               onChange={this.handleInputChange}
               onClick={this.fetchNewsArticles}
+              onKeyPress={this.handleKeyPress}
               buttonText="🔍"
             />
           </SearchFieldWrapper>

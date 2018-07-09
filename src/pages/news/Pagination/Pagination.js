@@ -4,7 +4,7 @@ import Proptypes from 'prop-types';
 
 // Components
 import Button from 'components/ui/Button';
-import PageChanger from '../PageChanger';
+import PageChanger from 'pages/news/PageChanger';
 
 // Styles
 import { colors } from 'config/style.constant';

@@ -33,8 +33,6 @@
     "babel-plugin-styled-components": "^1.5.1",
     "brotli-webpack-plugin": "^1.0.0",
     "compression-webpack-plugin": "^1.1.11",
-    "dotenv": "^6.0.0",
-    "dotenv-webpack": "^1.5.7",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-babel-module": "^5.0.0-beta.0",
@@ -65,8 +63,7 @@
     "dev": "webpack-dev-server --mode development --open --config webpack.dev.js --hot",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx",
     "lint:fix": "./node_modules/.bin/eslint --fix . --ext .js,.jsx",
-    "prettier":
-      "./node_modules/.bin/prettier --single-quote --trailing-comma=all --write ./src/**/*.{js,jsx}",
+    "prettier": "./node_modules/.bin/prettier --single-quote --trailing-comma=all --write ./src/**/*.{js,jsx}",
     "test": "jest",
     "test:update": "jest -u"
   },

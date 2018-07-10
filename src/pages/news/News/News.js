@@ -82,14 +82,14 @@ class News extends Component {
     const {
       queryString, currentPage, pageSize, sortBy,
     } = this.state;
-    // Sanitize special characters
-    const sanitizedQuery = encodeURI(queryString);
 
-    if (sanitizedQuery.trim()) {
+    if (queryString.trim()) {
+      // Sanitize special characters
+      const sanitizedQuery = encodeURIComponent(queryString);
       axios
         .get(`${API_URL}?q=${sanitizedQuery}&page=${currentPage}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${API_KEY}`)
-        .then(results => this.handleFetchSuccess(results))
-        .catch(error => this.handleFetchFailure(error));
+        .then(this.handleFetchSuccess)
+        .catch(this.handleFetchFailure);
     }
   };
 

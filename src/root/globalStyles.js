@@ -212,7 +212,7 @@ injectGlobal`
 
   body {
     min-height: 100%;
-    font-family: Larsseit, Helvetica, Arial, sans-serif;
+    font-family: Lato, Helvetica, Arial, sans-serif;
     font-weight: 400;
     line-height: ${lineHeight.base};
     color: ${colors.black};

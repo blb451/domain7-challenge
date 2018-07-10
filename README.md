@@ -4,10 +4,11 @@
 
 ## Environment Setup
 
-Reccommended node version: `v10.1.0`
+Reccommended node version: `>=8.6.0`
+API Keys available from: [News API](https://newsapi.org/)
 
 After cloning the repository, in the root folder create a file called `.env`
-Inside, simply add the following text (using your API key):
+Inside, simply add the following text:
 
 ```
 NEWS_API_KEY="<YOUR API KEY HERE>"
@@ -33,7 +34,7 @@ To start the `wepback-dev-server` run the command:
 $ npm run dev
 ```
 
-You should now have a server running on `localhost:8080`
+You should now have a server running on `localhost:8080` by default.
 
 ## Primary Technologies and Development Tools
 

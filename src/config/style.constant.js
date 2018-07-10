@@ -28,24 +28,11 @@ export const fontSizes = {
   massive: 10,
 };
 
-export const letterSpacings = {
-  large: '1.8px',
-};
-
 export const fontWeights = {
   light: '300',
   normal: '400',
   medium: '500',
   bold: '700',
-};
-
-export const spacings = {
-  xxSmall: 0.3,
-  xSmall: 0.75,
-  small: 1.25,
-  normal: 2.5,
-  large: 5,
-  xLarge: 8.4,
 };
 
 export const breakpoints = {

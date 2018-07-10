@@ -1,6 +1,6 @@
 # Domain7 Challenge Documentation
 
-[![N|Solid](https://media.glassdoor.com/sqll/911998/domain7-squarelogo-1484939599315.png)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://media.glassdoor.com/sqll/911998/domain7-squarelogo-1484939599315.png)](https://domain7.com/)
 
 ## Environment Setup
 
@@ -41,7 +41,7 @@ You should now have a server running on `localhost:8080`
 * Webpack - JavaScript module bundler.
 * Babel - A Javascript compiler.
 * Axios - Promise based HTTP client.
-* Styled Components - Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress.
+* Styled Components - Visual primitives for the components. Use ES6 and CSS to style applications.
 * ESLint - A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
 
 ## Considerations

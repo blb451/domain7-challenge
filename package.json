@@ -1,5 +1,11 @@
 {
   "name": "domain7-challenge",
+  "jest": {
+    "transform": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.js?$": "babel-jest"
+    }
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,11 +21,13 @@
     "styled-components": "^3.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.52",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.52",
     "@babel/preset-env": "^7.0.0-beta.49",
     "@babel/preset-react": "^7.0.0-beta.49",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.5",
+    "babel-jest": "^23.2.0",
     "babel-loader": "^8.0.0-beta.3",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-styled-components": "^1.5.1",
@@ -38,9 +46,13 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.3.1",
+    "jest": "^23.3.0",
+    "jest-dom": "^1.7.0",
+    "jest-transform-stub": "^1.0.0",
     "moment": "^2.22.2",
     "prettier": "1.12.1",
     "react-styled-select": "^1.0.0",
+    "react-testing-library": "^4.1.2",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4",
@@ -52,7 +64,10 @@
     "dev": "webpack-dev-server --mode development --open --config webpack.dev.js --hot",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx",
     "lint:fix": "./node_modules/.bin/eslint --fix . --ext .js,.jsx",
-    "prettier": "./node_modules/.bin/prettier --single-quote --trailing-comma=all --write ./src/**/*.{js,jsx}"
+    "prettier":
+      "./node_modules/.bin/prettier --single-quote --trailing-comma=all --write ./src/**/*.{js,jsx}",
+    "test": "jest",
+    "test:update": "jest -u"
   },
   "author": "",
   "license": "ISC"

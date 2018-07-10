@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article renders correctly 1`] = `
+<a
+  class="styles__Link-dWIqvV fDyBUA"
+  href="https://www.youbrandinc.com/crytocurrency/bitcoin-bitcoin-bitcoin-bitcoin-so-sue-us/"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <div
+    class="styles__Container-gILpVL upDDI"
+  >
+    <div
+      class="styles__ImageWrapper-jBJSSw dwrkQO"
+    >
+      <img
+        alt="not found"
+        class="styles__Image-hCHZUP jbWRx"
+        src="https://www.youbrandinc.com/wp-content/uploads/2018/05/Bitcoin-Trademarked-In-The-UK-In-Patent-Troll-Style-Action-1024x538.jpg"
+      />
+    </div>
+    <div
+      class="styles__ContentWrapper-gpqgPG ftVcGY"
+    >
+      <p
+        class="styles__Title-kJmJYc beqxsi"
+      >
+        Bitcoin Bitcoin Bitcoin BITCOIN!! So Sue Us.
+      </p>
+      <p
+        class="styles__Data-ftHKPo zYNWr"
+      >
+        Published by Scott Scanlon • 
+        May 30th, 2018 6:03 pm
+      </p>
+      <p
+        class="styles__Description-dafwGf iCzbpd"
+      >
+        Crypto Briefing exists to advocate for the safe and responsible integration of blockchain and cryptocurrency into mainstream life. We believe. Our goal is to grow the crypto community – to help new converts understand the basics, and to help more experienced …
+      </p>
+    </div>
+  </div>
+</a>
+`;
+
+exports[`Landing renders correctly 1`] = `
+<div
+  class="styles__Container-ieicpK gZDmYi"
+>
+  <div
+    class="styles__Content-ikKqwP jWmjet"
+  >
+    <div
+      class="styles__Container-kXYkfO hjRHoe"
+    >
+      <div
+        class="styles__LogoWrapper-cNVGLf dLfRIy"
+      >
+        <img
+          alt="domain7 logo"
+          class="styles__Domain7-fCQTro tsRfD"
+          src="[object Object]"
+        />
+        <div
+          class="styles__Plus-kQfQVt jRPtpR"
+        >
+          +
+        </div>
+        <img
+          alt="news api logo"
+          class="styles__NewsAPI-hUvuVi dwtGVy"
+          src="[object Object]"
+        />
+      </div>
+    </div>
+    <div
+      class="styles__Container-gmVGxh gsotRQ"
+    >
+      <input
+        class="styles__Input-ggDASI jsQDMp"
+        value=""
+      />
+      <button
+        class="styles__Container-kwWyMt iGMnbm"
+        color="#101131"
+      >
+        Search
+      </button>
+    </div>
+    <p
+      class="styles__ErrorMessage-kLAuQL ePhgoE"
+    >
+      
+    </p>
+    <p
+      class="styles__Text-hhLBdf jhmBaS"
+    >
+      Search through millions of articles from over 30,000 large and small news sources and blogs.
+    </p>
+    <p
+      class="styles__Subtext-bvCwTu gTBsaW"
+    >
+      Input keywords or phrases to search for, then press \`Enter\` or click \`Search\`
+    </p>
+  </div>
+</div>
+`;
+
+exports[`News renders correctly 1`] = `
+<div
+  class="styles___default-iPSHqq gzpHhH"
+>
+  <div
+    class="styles__Container-ieicpK gZDmYi"
+  >
+    <div
+      class="styles__Content-ikKqwP jWmjet"
+    >
+      <div
+        class="styles__Container-kXYkfO hjRHoe"
+      >
+        <div
+          class="styles__LogoWrapper-cNVGLf dLfRIy"
+        >
+          <img
+            alt="domain7 logo"
+            class="styles__Domain7-fCQTro tsRfD"
+            src="[object Object]"
+          />
+          <div
+            class="styles__Plus-kQfQVt jRPtpR"
+          >
+            +
+          </div>
+          <img
+            alt="news api logo"
+            class="styles__NewsAPI-hUvuVi dwtGVy"
+            src="[object Object]"
+          />
+        </div>
+      </div>
+      <div
+        class="styles__Container-gmVGxh gsotRQ"
+      >
+        <input
+          class="styles__Input-ggDASI jsQDMp"
+          value=""
+        />
+        <button
+          class="styles__Container-kwWyMt iGMnbm"
+          color="#101131"
+        >
+          Search
+        </button>
+      </div>
+      <p
+        class="styles__ErrorMessage-kLAuQL ePhgoE"
+      >
+        
+      </p>
+      <p
+        class="styles__Text-hhLBdf jhmBaS"
+      >
+        Search through millions of articles from over 30,000 large and small news sources and blogs.
+      </p>
+      <p
+        class="styles__Subtext-bvCwTu gTBsaW"
+      >
+        Input keywords or phrases to search for, then press \`Enter\` or click \`Search\`
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Pagination renders correctly 1`] = `
+<div
+  class="styles__Container-jGsLTA jawisE"
+>
+  <button
+    class="styles__Container-kwWyMt flJFf"
+    color="#8e9eab"
+    disabled=""
+  >
+    1
+  </button>
+</div>
+`;

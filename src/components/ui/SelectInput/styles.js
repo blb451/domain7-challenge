@@ -6,6 +6,8 @@ import Select from 'react-styled-select';
 import { breakpoints } from 'config/style.constant';
 
 export const StyledSelect = styled(Select)`
+  border-radius: 2px;
+
   @media screen and (max-width: ${breakpoints.small}px) {
     width: 90%;
   }

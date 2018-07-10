@@ -9,6 +9,10 @@ import Logo from 'components/static/Logo';
 // Styles
 import { Container, Content, Text, Subtext, ErrorMessage } from './styles';
 
+const MAIN_TEXT =
+  'Search through millions of articles from over 30,000 large and small news sources and blogs.';
+const SUB_TEXT = 'Input keywords or phrases to search for, then press `Enter` or click `Search`';
+
 const Landing = ({
   queryString,
   handleInputChange,
@@ -27,12 +31,8 @@ const Landing = ({
         onKeyPress={handleKeyPress}
       />
       <ErrorMessage>{errorMessage}</ErrorMessage>
-      <Text>
-        Search through millions of articles from over 30,000 large and small news sources and blogs.
-      </Text>
-      <Subtext>
-        Input keywords or phrases to search for, then press `Enter` or click `Search`
-      </Subtext>
+      <Text>{MAIN_TEXT}</Text>
+      <Subtext>{SUB_TEXT}</Subtext>
     </Content>
   </Container>
 );

@@ -16,8 +16,11 @@ export const Container = styled.div`
   padding: 20px;
   background: ${colors.white};
   border: 0.5px solid ${colors.lightGrey};
+  border-radius: 2px;
 
   &:hover {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.35s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 

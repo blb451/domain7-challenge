@@ -10,7 +10,8 @@ import PageChanger from 'pages/news/PageChanger';
 import { colors } from 'config/style.constant';
 import { Container } from './styles';
 
-const shouldRenderNext = (currentPage, totalResults) => currentPage * 10 < totalResults;
+const shouldRenderNext = (currentPage, totalResults, pageSize) =>
+  currentPage * pageSize < totalResults;
 
 const shouldRenderPrevious = currentPage => currentPage !== 1;
 
@@ -39,12 +40,11 @@ const Pagination = ({
         <Button onClick={() => setPage(previousPage)}>Previous</Button>
       )}
       {renderPageChangers(previousPages, setPage, pageSize, totalResults)}
-      {/* TODO: Replace color */}
       <Button onClick={() => {}} color={colors.background} disabled>
         {currentPage}
       </Button>
       {renderPageChangers(nextPages, setPage, pageSize, totalResults)}
-      {shouldRenderNext(currentPage, totalResults) && (
+      {shouldRenderNext(currentPage, totalResults, pageSize) && (
         <Button onClick={() => setPage(nextPage)}>Next</Button>
       )}
     </Container>

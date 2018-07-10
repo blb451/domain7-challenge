@@ -17,6 +17,8 @@ import { InputWrapper, SearchFieldWrapper, ArticleWrapper } from './styles';
 // API
 const API_KEY = process.env.NEWS_API_KEY;
 const API_URL = 'https://newsapi.org/v2/everything';
+const API_QUOTE_ERROR = 'For an exact search, all quotations must have both an opening and a close.';
+const API_RESULTS_ERROR = 'Sorry, no results found.';
 
 const sortByOptions = [
   { value: 'publishedAt', label: 'Date Published' },
@@ -61,18 +63,31 @@ class News extends Component {
   handleKeyPress = ({ key }) => key === 'Enter' && this.fetchNewsArticles();
 
   handleFetchSuccess = ({ data: { articles, totalResults } }) =>
-    this.setState({ articles, totalResults, errorMessage: '' });
+    this.setState({
+      articles,
+      totalResults,
+      // If no articles are found, set an error message
+      errorMessage: articles.length ? '' : API_RESULTS_ERROR,
+    });
 
-  handleFetchFailure = ({ response }) => this.setState({ errorMessage: response.data.message });
+  handleFetchFailure = ({ response }) => {
+    const { queryString } = this.state;
+    // Check for unclosed quotes
+    const unmatchedQuotes = (queryString.match(/"/g) || []).length % 2 !== 0;
+    const message = unmatchedQuotes ? API_QUOTE_ERROR : response.data.message;
+    this.setState({ errorMessage: message });
+  }
 
   fetchNewsArticles = () => {
     const {
       queryString, currentPage, pageSize, sortBy,
     } = this.state;
+    // Sanitize special characters
+    const sanitizedQuery = encodeURI(queryString);
 
-    if (queryString) {
+    if (sanitizedQuery.trim()) {
       axios
-        .get(`${API_URL}?q=${queryString}&page=${currentPage}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${API_KEY}`)
+        .get(`${API_URL}?q=${sanitizedQuery}&page=${currentPage}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${API_KEY}`)
         .then(results => this.handleFetchSuccess(results))
         .catch(error => this.handleFetchFailure(error));
     }

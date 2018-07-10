@@ -46,7 +46,7 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
-        NEWS_API_KEY: process.env.NEWS_API_KEY,
+        NEWS_API_KEY: process.env.REACT_APP_API_KEY,
       },
     }),
     new BrotliGzipPlugin({

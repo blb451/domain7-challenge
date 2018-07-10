@@ -64,8 +64,7 @@
     "dev": "webpack-dev-server --mode development --open --config webpack.dev.js --hot",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx",
     "lint:fix": "./node_modules/.bin/eslint --fix . --ext .js,.jsx",
-    "prettier":
-      "./node_modules/.bin/prettier --single-quote --trailing-comma=all --write ./src/**/*.{js,jsx}",
+    "prettier": "./node_modules/.bin/prettier --single-quote --trailing-comma=all --write ./src/**/*.{js,jsx}",
     "test": "jest",
     "test:update": "jest -u"
   },

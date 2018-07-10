@@ -5,6 +5,7 @@
 ## Environment Setup
 
 Reccommended node version: `>=8.6.0`
+
 API Keys available from: [News API](https://newsapi.org/)
 
 After cloning the repository, in the root folder create a file called `.env`

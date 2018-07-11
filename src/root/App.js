@@ -12,7 +12,7 @@ import './globalStyles';
 const App = () => (
   <Switch>
     <Route exact path="/" component={News} />
-    <Route exact path="/new" component={News} />
+    <Route exact path="/news" component={News} />
   </Switch>
 );
 
